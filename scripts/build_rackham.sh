@@ -3,7 +3,6 @@
 #SBATCH -n 1
 #SBATCH -t 10:00
 #SBATCH --job-name gha_intel_cpp17
-#SBATCH --output build_rackham.log
 #SBATCH --qos=short
 #
 # Build the project on Rackham, an UPPMAX computer cluster, see
@@ -35,5 +34,5 @@ module load bioinfo-tools wrf-python/1.3.1 ABINIT/8.10.3 Amber/20 CDO/1.9.5 GOTM
 # Rackham location (GHA location: source /opt/intel/oneapi/setvars.sh)
 source /sw/comp/intel/oneapi/setvars.sh
 
-icpx main.cpp -o gha_intel_cpp17
+icpx main.cpp --verbose -o gha_intel_cpp17
 ./gha_intel_cpp17
