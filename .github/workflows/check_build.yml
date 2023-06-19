@@ -19,13 +19,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Remove g++
-        run: sudo apt-get remove g++
+        run: sudo apt-get purge g++
 
       - name: g++ must be removed. It is :-)
         run: g++ --version || true
 
-      - name: Remove clang
-        run: sudo apt-get remove clang
+      - name: Remove llvm clang
+        run: sudo apt-get purge llvm clang
 
       - name: clang must be removed. It is :-)
         run: clang --version || true
