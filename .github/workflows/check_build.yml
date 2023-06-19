@@ -47,9 +47,14 @@ jobs:
         run: cat /opt/intel/oneapi/setvars.sh
 
       - name: Compile
-        run: 
+        run: |
           source /opt/intel/oneapi/setvars.sh
           icpx main.cpp -o gha_intel_cpp17
+
+      - name: Show
+        run: |
+          ls
+          find .
       
       - name: Run the program
         run: ./gha_intel_cpp17
