@@ -19,10 +19,9 @@ More complex builds:
 
  * Build with `CMake`: [gha_cmake_intel_cpp17](https://github.com/richelbilderbeek/gha_cmake_intel_cpp17
 
-
 Equally complex builds:
 
- * [none]
+ * Use GCC (instead of Intel) compiler: [gha_gcc_cpp17](https://github.com/richelbilderbeek/gha_gcc_cpp17
 
 Less complex builds:
 
