@@ -1,0 +1,144 @@
+Working on a cluster
+mån jun 19 11:14:56 CEST 2023
+sh: line 1: 53771 Illegal instruction     (core dumped) tput cols 2> /dev/null
+ 
+:: initializing oneAPI environment ...
+   slurm_script: BASH_VERSION = 4.2.46(2)-release
+   args: Using "$@" for setvars.sh arguments: 
+:: advisor -- latest
+:: ccl -- latest
+:: clck -- latest
+:: compiler -- latest
+:: dal -- latest
+:: debugger -- latest
+:: dev-utilities -- latest
+:: dnnl -- latest
+:: dpcpp-ct -- latest
+:: dpl -- latest
+:: inspector -- latest
+:: intelpython -- latest
+:: ipp -- latest
+:: ippcp -- latest
+:: ipp -- latest
+:: itac -- latest
+:: mkl -- latest
+:: mpi -- latest
+:: tbb -- latest
+:: vpl -- latest
+:: vtune -- latest
+:: oneAPI environment initialized ::
+ 
+Intel(R) oneAPI DPC++/C++ Compiler 2023.1.0 (2023.1.0.20230320)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm
+Configuration file: /sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../bin/icpx.cfg
+Found candidate GCC installation: /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0
+Selected GCC installation: /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/clang++" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name main.cpp -mrelocation-model static -fveclib=SVML -mframe-pointer=none -menable-no-infs -menable-no-nans -fapprox-func -funsafe-math-optimizations -fno-signed-zeros -mreassociate -freciprocal-math -fdenormal-fp-math=preserve-sign,preserve-sign -ffp-contract=fast -fno-rounding-math -ffast-math -ffinite-math-only -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -mllvm -x86-enable-unaligned-vector-move=true -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/richel/GitHubs/gha_intel_cpp17 -resource-dir /sw/comp/intel/oneapi/compiler/2023.1.0/linux/lib/clang/16 -I/sw/comp/intel/oneapi/vpl/2023.0.0/include -I/sw/comp/intel/oneapi/tbb/2021.9.0/env/../include -I/sw/comp/intel/oneapi/mpi/2021.9.0//include -I/sw/comp/intel/oneapi/mkl/2023.1.0/include -I/sw/comp/intel/oneapi/ipp/2021.8.0/include -I/sw/comp/intel/oneapi/ippcp/2021.7.0/include -I/sw/comp/intel/oneapi/ipp/2021.8.0/include -I/sw/comp/intel/oneapi/dpl/2022.1.0/linux/include -I/sw/comp/intel/oneapi/dpcpp-ct/2023.1.0/include -I/sw/comp/intel/oneapi/dnnl/2023.1.0/cpu_dpcpp_gpu_dpcpp/include -I/sw/comp/intel/oneapi/dev-utilities/2021.9.0/include -I/sw/comp/intel/oneapi/dal/2023.1.0/include -I/sw/comp/intel/oneapi/ccl/2021.9.0/include/cpu_gpu_dpcpp -I/sw/EasyBuild/rackham/software/impi/2021.6.0-intel-compilers-2022.1.0/mpi/2021.6.0/include -I/sw/EasyBuild/rackham/software/UCX/1.12.1-GCCcore-11.3.0/include -I/sw/EasyBuild/rackham/software/numactl/2.0.14-GCCcore-11.3.0/include -I/sw/EasyBuild/rackham/software/zlib/1.2.12-GCCcore-11.3.0/include -I/sw/EasyBuild/rackham/software/imkl/2022.1.0/mkl/2022.1.0/include/fftw -I/sw/EasyBuild/rackham/software/imkl/2022.1.0/mkl/2022.1.0/include -I/sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/tbb/2021.6.0/include -I/sw/EasyBuild/rackham/software/binutils/2.38-GCCcore-11.3.0/include -I/sw/EasyBuild/rackham/software/deal.II/9.1.1-intel-2019a/include -I/sw/EasyBuild/rackham/software/PETSc/3.11.1-intel-2019a/include -I/sw/EasyBuild/rackham/software/Hypre/2.15.1-intel-2019a/include -I/sw/EasyBuild/rackham/software/SuiteSparse/5.4.0-intel-2019a-METIS-5.1.0/include -I/sw/EasyBuild/rackham/software/SCOTCH/6.0.6-iimpi-2019a/include -I/sw/EasyBuild/rackham/software/ParMETIS/4.0.3-iimpi-2019a/include -I/sw/EasyBuild/rackham/software/netCDF/4.6.2-iimpi-2019a/include -I/sw/EasyBuild/rackham/software/cURL/7.63.0-GCCcore-8.2.0/include -I/sw/EasyBuild/rackham/software/HDF5/1.10.5-iimpi-2019a/include -I/sw/EasyBuild/rackham/software/Szip/2.1.1-GCCcore-8.2.0/include -I/sw/EasyBuild/rackham/software/GSL/2.5-iccifort-2019.1.144-GCC-8.2.0-2.31.1/include -I/sw/EasyBuild/rackham/software/Boost/1.70.0-iimpi-2019a/include -I/sw/EasyBuild/rackham/software/XZ/5.2.4-GCCcore-8.2.0/include -I/sw/EasyBuild/rackham/software/bzip2/1.0.6-GCCcore-8.2.0/include -I/sw/EasyBuild/rackham/software/ifort/2019.1.144-GCC-8.2.0-2.31.1/include -I/sw/EasyBuild/rackham/software/icc/2019.1.144-GCC-8.2.0-2.31.1/compilers_and_libraries_2019.1.144/linux/tbb/include -I/sw/EasyBuild/rackham/software/PROJ/8.1.0-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/LibTIFF/4.3.0-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/zstd/1.5.0-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/lz4/1.9.3-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/jbigkit/2.1-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/libjpeg-turbo/2.0.6-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/SQLite/3.36-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/Tcl/8.6.11-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/libreadline/8.1-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/ncurses/6.2-GCCcore-11.2.0/include -I/sw/EasyBuild/rackham/software/PRISMS-PF/2.1.1-intel-2019a/include -I/sw/EasyBuild/rackham/software/p4est/2.2-intel-2019a/include -I/sw/EasyBuild/rackham/software/METIS/5.1.0-GCCcore-8.2.0/include -I/sw/EasyBuild/rackham/software/ecCodes/2.9.2-intel-2018b/include -I/sw/EasyBuild/rackham/software/JasPer/2.0.14-GCCcore-7.3.0/include -I/sw/EasyBuild/rackham/software/YAXT/0.6.0-intel-2018b/include -I/sw/EasyBuild/rackham/software/MUMPS/5.5.0-foss-2021a-metis/include -I/sw/EasyBuild/rackham/software/FFTW/3.3.9-gompi-2021a/include -I/sw/EasyBuild/rackham/software/OpenMPI/4.1.1-GCC-10.3.0/include -I/sw/EasyBuild/rackham/software/PMIx/3.2.3-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/libfabric/1.12.1-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/libevent/2.1.12-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/OpenSSL/1.1/include -I/sw/EasyBuild/rackham/software/hwloc/2.4.1-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/libpciaccess/0.16-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/libxml2/2.9.10-GCCcore-10.3.0/include/libxml2 -I/sw/EasyBuild/rackham/software/libxml2/2.9.10-GCCcore-10.3.0/include -I/sw/EasyBuild/rackham/software/FlexiBLAS/3.0.4-GCC-10.3.0/include -I/sw/EasyBuild/rackham/software/OpenBLAS/0.3.15-GCC-10.3.0/include -I/sw/apps/GOTM/5.3-221-gac7ec88d/rackham/include -I/sw/EasyBuild/rackham/software/netCDF-Fortran/4.4.4-intel-2018b/include -I/sw/EasyBuild/rackham/software/Amber/20.11-foss-2020b-AmberTools-21.3/include -I/sw/EasyBuild/rackham/software/PnetCDF/1.12.2-gompi-2020b/include -I/sw/EasyBuild/rackham/software/libpng/1.6.37-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/Tk/8.6.10-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/X11/20201008-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/fontconfig/2.13.92-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/util-linux/2.36-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/expat/2.2.9-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/freetype/2.10.3-GCCcore-10.2.0/include/freetype2 -I/sw/EasyBuild/rackham/software/Brotli/1.0.9-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/DB/18.1.40-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/SciPy-bundle/2020.11-foss-2020b/lib/python3.8/site-packages/numpy/core/include -I/sw/EasyBuild/rackham/software/pybind11/2.6.0-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/Python/3.8.6-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/libffi/3.3-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/GMP/6.2.0-GCCcore-10.2.0/include -I/sw/EasyBuild/rackham/software/libxc/3.0.1-intel-2018b/include -I/sw/EasyBuild/rackham/software/GEOS/3.6.2-intel-2018b-Python-3.6.6/include -cxx-isystem /sw/comp/intel/oneapi/clck/2021.7.3/include -internal-isystem /sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../compiler/include -internal-isystem /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0 -internal-isystem /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0/x86_64-pc-linux-gnu -internal-isystem /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0/backward -internal-isystem /sw/comp/intel/oneapi/compiler/2023.1.0/linux/lib/clang/16/include -internal-isystem /usr/local/include -internal-isystem /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -O2 -fdeprecated-macro -fdebug-compilation-dir=/home/richel/GitHubs/gha_intel_cpp17 -ferror-limit 19 -fheinous-gnu-extensions -fgnuc-version=4.2.1 -no-opaque-pointers -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -D__GCC_HAVE_DWARF2_CFI_ASM=1 -fintel-compatibility -fintel-libirc-allowed -mllvm -disable-hir-generate-mkl-call -mllvm -loopopt=1 -floopopt-pipeline=light -mllvm -intel-abi-compatible=true -o /scratch/7983977/icpx-a73a3a/main-0b37e9.o -x c++ main.cpp
+clang -cc1 version 16.0.0 based upon LLVM 16.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../x86_64-pc-linux-gnu/include"
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/sw/comp/intel/oneapi/ipp/2021.8.0/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /sw/comp/intel/oneapi/vpl/2023.0.0/include
+ /sw/comp/intel/oneapi/tbb/2021.9.0/env/../include
+ /sw/comp/intel/oneapi/mpi/2021.9.0//include
+ /sw/comp/intel/oneapi/mkl/2023.1.0/include
+ /sw/comp/intel/oneapi/ipp/2021.8.0/include
+ /sw/comp/intel/oneapi/ippcp/2021.7.0/include
+ /sw/comp/intel/oneapi/dpl/2022.1.0/linux/include
+ /sw/comp/intel/oneapi/dpcpp-ct/2023.1.0/include
+ /sw/comp/intel/oneapi/dnnl/2023.1.0/cpu_dpcpp_gpu_dpcpp/include
+ /sw/comp/intel/oneapi/dev-utilities/2021.9.0/include
+ /sw/comp/intel/oneapi/dal/2023.1.0/include
+ /sw/comp/intel/oneapi/ccl/2021.9.0/include/cpu_gpu_dpcpp
+ /sw/EasyBuild/rackham/software/impi/2021.6.0-intel-compilers-2022.1.0/mpi/2021.6.0/include
+ /sw/EasyBuild/rackham/software/UCX/1.12.1-GCCcore-11.3.0/include
+ /sw/EasyBuild/rackham/software/numactl/2.0.14-GCCcore-11.3.0/include
+ /sw/EasyBuild/rackham/software/zlib/1.2.12-GCCcore-11.3.0/include
+ /sw/EasyBuild/rackham/software/imkl/2022.1.0/mkl/2022.1.0/include/fftw
+ /sw/EasyBuild/rackham/software/imkl/2022.1.0/mkl/2022.1.0/include
+ /sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/tbb/2021.6.0/include
+ /sw/EasyBuild/rackham/software/binutils/2.38-GCCcore-11.3.0/include
+ /sw/EasyBuild/rackham/software/deal.II/9.1.1-intel-2019a/include
+ /sw/EasyBuild/rackham/software/PETSc/3.11.1-intel-2019a/include
+ /sw/EasyBuild/rackham/software/Hypre/2.15.1-intel-2019a/include
+ /sw/EasyBuild/rackham/software/SuiteSparse/5.4.0-intel-2019a-METIS-5.1.0/include
+ /sw/EasyBuild/rackham/software/SCOTCH/6.0.6-iimpi-2019a/include
+ /sw/EasyBuild/rackham/software/ParMETIS/4.0.3-iimpi-2019a/include
+ /sw/EasyBuild/rackham/software/netCDF/4.6.2-iimpi-2019a/include
+ /sw/EasyBuild/rackham/software/cURL/7.63.0-GCCcore-8.2.0/include
+ /sw/EasyBuild/rackham/software/HDF5/1.10.5-iimpi-2019a/include
+ /sw/EasyBuild/rackham/software/Szip/2.1.1-GCCcore-8.2.0/include
+ /sw/EasyBuild/rackham/software/GSL/2.5-iccifort-2019.1.144-GCC-8.2.0-2.31.1/include
+ /sw/EasyBuild/rackham/software/Boost/1.70.0-iimpi-2019a/include
+ /sw/EasyBuild/rackham/software/XZ/5.2.4-GCCcore-8.2.0/include
+ /sw/EasyBuild/rackham/software/bzip2/1.0.6-GCCcore-8.2.0/include
+ /sw/EasyBuild/rackham/software/ifort/2019.1.144-GCC-8.2.0-2.31.1/include
+ /sw/EasyBuild/rackham/software/icc/2019.1.144-GCC-8.2.0-2.31.1/compilers_and_libraries_2019.1.144/linux/tbb/include
+ /sw/EasyBuild/rackham/software/PROJ/8.1.0-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/LibTIFF/4.3.0-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/zstd/1.5.0-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/lz4/1.9.3-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/jbigkit/2.1-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/libjpeg-turbo/2.0.6-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/SQLite/3.36-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/Tcl/8.6.11-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/libreadline/8.1-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/ncurses/6.2-GCCcore-11.2.0/include
+ /sw/EasyBuild/rackham/software/PRISMS-PF/2.1.1-intel-2019a/include
+ /sw/EasyBuild/rackham/software/p4est/2.2-intel-2019a/include
+ /sw/EasyBuild/rackham/software/METIS/5.1.0-GCCcore-8.2.0/include
+ /sw/EasyBuild/rackham/software/ecCodes/2.9.2-intel-2018b/include
+ /sw/EasyBuild/rackham/software/JasPer/2.0.14-GCCcore-7.3.0/include
+ /sw/EasyBuild/rackham/software/YAXT/0.6.0-intel-2018b/include
+ /sw/EasyBuild/rackham/software/MUMPS/5.5.0-foss-2021a-metis/include
+ /sw/EasyBuild/rackham/software/FFTW/3.3.9-gompi-2021a/include
+ /sw/EasyBuild/rackham/software/OpenMPI/4.1.1-GCC-10.3.0/include
+ /sw/EasyBuild/rackham/software/PMIx/3.2.3-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/libfabric/1.12.1-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/libevent/2.1.12-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/OpenSSL/1.1/include
+ /sw/EasyBuild/rackham/software/hwloc/2.4.1-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/libpciaccess/0.16-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/libxml2/2.9.10-GCCcore-10.3.0/include/libxml2
+ /sw/EasyBuild/rackham/software/libxml2/2.9.10-GCCcore-10.3.0/include
+ /sw/EasyBuild/rackham/software/FlexiBLAS/3.0.4-GCC-10.3.0/include
+ /sw/EasyBuild/rackham/software/OpenBLAS/0.3.15-GCC-10.3.0/include
+ /sw/apps/GOTM/5.3-221-gac7ec88d/rackham/include
+ /sw/EasyBuild/rackham/software/netCDF-Fortran/4.4.4-intel-2018b/include
+ /sw/EasyBuild/rackham/software/Amber/20.11-foss-2020b-AmberTools-21.3/include
+ /sw/EasyBuild/rackham/software/PnetCDF/1.12.2-gompi-2020b/include
+ /sw/EasyBuild/rackham/software/libpng/1.6.37-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/Tk/8.6.10-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/X11/20201008-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/fontconfig/2.13.92-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/util-linux/2.36-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/expat/2.2.9-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/freetype/2.10.3-GCCcore-10.2.0/include/freetype2
+ /sw/EasyBuild/rackham/software/Brotli/1.0.9-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/DB/18.1.40-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/SciPy-bundle/2020.11-foss-2020b/lib/python3.8/site-packages/numpy/core/include
+ /sw/EasyBuild/rackham/software/pybind11/2.6.0-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/Python/3.8.6-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/libffi/3.3-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/GMP/6.2.0-GCCcore-10.2.0/include
+ /sw/EasyBuild/rackham/software/libxc/3.0.1-intel-2018b/include
+ /sw/EasyBuild/rackham/software/GEOS/3.6.2-intel-2018b-Python-3.6.6/include
+ /sw/comp/intel/oneapi/clck/2021.7.3/include
+ /sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../compiler/include
+ /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0
+ /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0/x86_64-pc-linux-gnu
+ /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../include/c++/11.3.0/backward
+ /sw/comp/intel/oneapi/compiler/2023.1.0/linux/lib/clang/16/include
+ /usr/local/include
+ /usr/include
+End of search list.
+ "/sw/EasyBuild/rackham/software/binutils/2.38-GCCcore-11.3.0/bin/ld" --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o gha_intel_cpp17 /lib/../lib64/crt1.o /lib/../lib64/crti.o /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbegin.o -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../compiler/lib/intel64_lin -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../lib -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../compiler/lib/intel64_lin -L/sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -L/sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/../../.. -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/bin-llvm/../lib -L/lib -L/usr/lib -L/sw/comp/intel/oneapi/vpl/2023.0.0/lib -L/sw/comp/intel/oneapi/tbb/2021.9.0/env/../lib/intel64/gcc4.8 -L/sw/comp/intel/oneapi/mpi/2021.9.0//libfabric/lib -L/sw/comp/intel/oneapi/mpi/2021.9.0//lib/release -L/sw/comp/intel/oneapi/mpi/2021.9.0//lib -L/sw/comp/intel/oneapi/mkl/2023.1.0/lib/intel64 -L/sw/comp/intel/oneapi/ipp/2021.8.0/lib/intel64 -L/sw/comp/intel/oneapi/ippcp/2021.7.0/lib/intel64 -L/sw/comp/intel/oneapi/ipp/2021.8.0/lib/intel64 -L/sw/comp/intel/oneapi/dnnl/2023.1.0/cpu_dpcpp_gpu_dpcpp/lib -L/sw/comp/intel/oneapi/dal/2023.1.0/lib/intel64 -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/compiler/lib/intel64_lin -L/sw/comp/intel/oneapi/compiler/2023.1.0/linux/lib -L/sw/comp/intel/oneapi/clck/2021.7.3/lib/intel64 -L/sw/comp/intel/oneapi/ccl/2021.9.0/lib/cpu_gpu_dpcpp -L/sw/EasyBuild/rackham/software/imkl-FFTW/2022.1.0-iimpi-2022a/lib -L/sw/EasyBuild/rackham/software/impi/2021.6.0-intel-compilers-2022.1.0/mpi/2021.6.0/libfabric/lib -L/sw/EasyBuild/rackham/software/impi/2021.6.0-intel-compilers-2022.1.0/mpi/2021.6.0/lib/release -L/sw/EasyBuild/rackham/software/impi/2021.6.0-intel-compilers-2022.1.0/mpi/2021.6.0/lib -L/sw/EasyBuild/rackham/software/UCX/1.12.1-GCCcore-11.3.0/lib -L/sw/EasyBuild/rackham/software/numactl/2.0.14-GCCcore-11.3.0/lib -L/sw/EasyBuild/rackham/software/zlib/1.2.12-GCCcore-11.3.0/lib -L/sw/EasyBuild/rackham/software/imkl/2022.1.0/mkl/2022.1.0/lib/intel64 -L/sw/EasyBuild/rackham/software/imkl/2022.1.0/compiler/2022.1.0/linux/compiler/lib/intel64_lin -L/sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/tbb/2021.6.0/lib/intel64/gcc4.8 -L/sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/compiler/2022.1.0/linux/compiler/lib/intel64_lin -L/sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/compiler/2022.1.0/linux/lib/x64 -L/sw/EasyBuild/rackham/software/intel-compilers/2022.1.0/compiler/2022.1.0/linux/lib -L/sw/EasyBuild/rackham/software/binutils/2.38-GCCcore-11.3.0/lib -L/sw/EasyBuild/rackham/software/deal.II/9.1.1-intel-2019a/lib -L/sw/EasyBuild/rackham/software/PETSc/3.11.1-intel-2019a/lib -L/sw/EasyBuild/rackham/software/Hypre/2.15.1-intel-2019a/lib -L/sw/EasyBuild/rackham/software/SuiteSparse/5.4.0-intel-2019a-METIS-5.1.0/lib -L/sw/EasyBuild/rackham/software/SCOTCH/6.0.6-iimpi-2019a/lib -L/sw/EasyBuild/rackham/software/ParMETIS/4.0.3-iimpi-2019a/lib -L/sw/EasyBuild/rackham/software/netCDF/4.6.2-iimpi-2019a/lib64 -L/sw/EasyBuild/rackham/software/cURL/7.63.0-GCCcore-8.2.0/lib -L/sw/EasyBuild/rackham/software/HDF5/1.10.5-iimpi-2019a/lib -L/sw/EasyBuild/rackham/software/Szip/2.1.1-GCCcore-8.2.0/lib -L/sw/EasyBuild/rackham/software/GSL/2.5-iccifort-2019.1.144-GCC-8.2.0-2.31.1/lib -L/sw/EasyBuild/rackham/software/Boost/1.70.0-iimpi-2019a/lib -L/sw/EasyBuild/rackham/software/XZ/5.2.4-GCCcore-8.2.0/lib -L/sw/EasyBuild/rackham/software/bzip2/1.0.6-GCCcore-8.2.0/lib -L/sw/EasyBuild/rackham/software/ifort/2019.1.144-GCC-8.2.0-2.31.1/compilers_and_libraries_2019.1.144/linux/compiler/lib/intel64 -L/sw/EasyBuild/rackham/software/icc/2019.1.144-GCC-8.2.0-2.31.1/compilers_and_libraries_2019.1.144/linux/tbb/lib/intel64/gcc4.4 -L/sw/EasyBuild/rackham/software/icc/2019.1.144-GCC-8.2.0-2.31.1/compilers_and_libraries_2019.1.144/linux/compiler/lib/intel64 -L/sw/EasyBuild/rackham/software/PROJ/8.1.0-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/LibTIFF/4.3.0-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/zstd/1.5.0-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/lz4/1.9.3-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/jbigkit/2.1-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/libjpeg-turbo/2.0.6-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/SQLite/3.36-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/Tcl/8.6.11-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/libreadline/8.1-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/ncurses/6.2-GCCcore-11.2.0/lib -L/sw/EasyBuild/rackham/software/PRISMS-PF/2.1.1-intel-2019a/lib -L/sw/EasyBuild/rackham/software/p4est/2.2-intel-2019a/lib -L/sw/EasyBuild/rackham/software/METIS/5.1.0-GCCcore-8.2.0/lib -L/sw/EasyBuild/rackham/software/ecCodes/2.9.2-intel-2018b/lib -L/sw/EasyBuild/rackham/software/JasPer/2.0.14-GCCcore-7.3.0/lib64 -L/sw/EasyBuild/rackham/software/YAXT/0.6.0-intel-2018b/lib -L/sw/EasyBuild/rackham/software/MUMPS/5.5.0-foss-2021a-metis/lib -L/sw/EasyBuild/rackham/software/ScaLAPACK/2.1.0-gompi-2021a-fb/lib -L/sw/EasyBuild/rackham/software/FFTW/3.3.9-gompi-2021a/lib -L/sw/EasyBuild/rackham/software/OpenMPI/4.1.1-GCC-10.3.0/lib -L/sw/EasyBuild/rackham/software/PMIx/3.2.3-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/libfabric/1.12.1-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/libevent/2.1.12-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/OpenSSL/1.1/lib -L/sw/EasyBuild/rackham/software/hwloc/2.4.1-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/libpciaccess/0.16-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/libxml2/2.9.10-GCCcore-10.3.0/lib -L/sw/EasyBuild/rackham/software/FlexiBLAS/3.0.4-GCC-10.3.0/lib -L/sw/EasyBuild/rackham/software/OpenBLAS/0.3.15-GCC-10.3.0/lib -L/sw/apps/GOTM/5.3-221-gac7ec88d/rackham/lib -L/sw/EasyBuild/rackham/software/netCDF-Fortran/4.4.4-intel-2018b/lib -L/sw/EasyBuild/rackham/software/Amber/20.11-foss-2020b-AmberTools-21.3/lib -L/sw/EasyBuild/rackham/software/PnetCDF/1.12.2-gompi-2020b/lib -L/sw/EasyBuild/rackham/software/matplotlib/3.3.3-foss-2020b/lib -L/sw/EasyBuild/rackham/software/libpng/1.6.37-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/Tkinter/3.8.6-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/Tk/8.6.10-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/X11/20201008-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/fontconfig/2.13.92-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/util-linux/2.36-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/expat/2.2.9-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/freetype/2.10.3-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/Brotli/1.0.9-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/Perl/5.32.0-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/DB/18.1.40-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/SciPy-bundle/2020.11-foss-2020b/lib/python3.8/site-packages/numpy/core/lib -L/sw/EasyBuild/rackham/software/SciPy-bundle/2020.11-foss-2020b/lib -L/sw/EasyBuild/rackham/software/Python/3.8.6-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/libffi/3.3-GCCcore-10.2.0/lib64 -L/sw/EasyBuild/rackham/software/libffi/3.3-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/GMP/6.2.0-GCCcore-10.2.0/lib -L/sw/EasyBuild/rackham/software/ABINIT/8.10.3-intel-2018b/lib -L/sw/EasyBuild/rackham/software/AtomPAW/4.1.0.5-intel-2018b/lib -L/sw/EasyBuild/rackham/software/Wannier90/2.0.1.1-intel-2018b-abinit/lib -L/sw/EasyBuild/rackham/software/libxc/3.0.1-intel-2018b/lib -L/sw/EasyBuild/rackham/software/wrf-python/1.3.1-intel-2018b-Python-3.6.6/lib -L/sw/EasyBuild/rackham/software/basemap/1.2.0-intel-2018b-Python-3.6.6/lib -L/sw/EasyBuild/rackham/software/GEOS/3.6.2-intel-2018b-Python-3.6.6/lib /scratch/7983977/icpx-a73a3a/main-0b37e9.o -Bstatic -lsvml -Bdynamic -Bstatic -lirng -Bdynamic -lstdc++ -Bstatic -limf -Bdynamic -lm -lgcc_s -lgcc -Bstatic -lirc -Bdynamic -ldl -lgcc_s -lgcc -lc -lgcc_s -lgcc -Bstatic -lirc_s -Bdynamic /sw/EasyBuild/rackham/software/GCCcore/11.3.0/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtend.o /lib/../lib64/crtn.o
+icpx: error: unable to execute command: Illegal instruction (core dumped)
+icpx: error: linker command failed due to signal (use -v to see invocation)
+/var/spool/slurmd/job7983977/slurm_script: line 42: ./gha_intel_cpp17: No such file or directory
