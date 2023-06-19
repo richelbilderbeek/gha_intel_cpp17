@@ -25,7 +25,7 @@ jobs:
         run: g++ --version || true
 
       - name: Remove clang
-        run: sudo apt-get remove clang++
+        run: sudo apt-get remove clang
 
       - name: clang++ must be removed. It is :-)
         run: clang++ --version || true
