@@ -24,14 +24,17 @@ jobs:
       - name: g++ must be removed. It is :-)
         run: g++ --version || true
 
-      - name: Remove llvm clang, FAILS
-        run: sudo apt-get remove llvm clang
+      - name: Remove llvm
+        run: sudo apt-get remove llvm llvm-*
 
-      - name: Find llvm
-        run: apt search llvm
+      - name: Remove clang
+        run: sudo apt-get remove clang clang-*
 
-      - name: Find clang
-        run: apt search clang
+      #- name: Find llvm
+      #  run: apt search llvm
+
+      #- name: Find clang
+      #  run: apt search clang
 
       - name: clang++ must be removed. It is NOT YET :-)
         run: clang++ --version || true
