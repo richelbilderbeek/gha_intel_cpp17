@@ -31,8 +31,7 @@ date
 
 
 # Loading intel/2022a and its dependencies
-module load bioinfo-tools intel/2022a
-# module load bioinfo-tools wrf-python/1.3.1 ABINIT/8.10.3 Amber/20 CDO/1.9.5 GOTM/5.3-221-gac7ec88d MUMPS/5.5.0 CDO/1.9.5 PRISMS-PF/2.1.1 PROJ/8.1.0 Siesta/4.1-b4 Singular/4.1.2 deal.II/9.1.1-intel intel/2022a
+module load bioinfo-tools wrf-python/1.3.1 ABINIT/8.10.3 Amber/20 CDO/1.9.5 GOTM/5.3-221-gac7ec88d MUMPS/5.5.0 CDO/1.9.5 PRISMS-PF/2.1.1 PROJ/8.1.0 Siesta/4.1-b4 Singular/4.1.2 deal.II/9.1.1-intel intel/2022a
 # Too old, but easier:
 # module load intel/20.4
 
