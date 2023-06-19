@@ -17,7 +17,7 @@ The goal of this project is to have a clean GitHub Actions build, with specs:
 
 More complex builds:
 
- * Build with `CMake`: [gha_cmake_intel_cpp17](https://github.com/richelbilderbeek/gha_cmake_intel_cpp17
+ * Build with `CMake`: [gha_cmake_intel_cpp17](https://github.com/richelbilderbeek/gha_cmake_intel_cpp17)
 
 Equally complex builds:
 
