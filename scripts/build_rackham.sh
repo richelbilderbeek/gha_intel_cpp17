@@ -16,6 +16,10 @@
 #
 #   sbatch -A uppmax2023-2-25 -M snowy scripts/build_rackham.sh
 #
+#  Or using the convenience script:
+#
+#   ./sbatch_richel.sh
+#
 if [[ ! -z "${CLUSTER}" ]]; then
   echo "Working on a cluster"
 else
