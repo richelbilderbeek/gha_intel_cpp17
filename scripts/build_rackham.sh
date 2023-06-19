@@ -35,6 +35,9 @@ module load bioinfo-tools wrf-python/1.3.1 ABINIT/8.10.3 Amber/20 CDO/1.9.5 GOTM
 # Too old, but easier:
 # module load intel/20.4
 
+# Show the module list, as requested by Pavlin
+module list
+
 # Rackham location (GHA location: source /opt/intel/oneapi/setvars.sh)
 source /sw/comp/intel/oneapi/setvars.sh
 
