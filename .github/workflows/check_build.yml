@@ -19,16 +19,22 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Remove g++
-        run: sudo apt-get purge g++
+        run: sudo apt-get remove g++
 
       - name: g++ must be removed. It is :-)
         run: g++ --version || true
 
-      - name: Remove llvm clang
-        run: sudo apt-get purge llvm clang
+      - name: Remove llvm clang, FAILS
+        run: sudo apt-get remove llvm clang
 
-      - name: clang must be removed. It is :-)
-        run: clang --version || true
+      - name: Find llvm
+        run: apt search llvm
+
+      - name: Find clang
+        run: apt search clang
+
+      - name: clang++ must be removed. It is NOT YET :-)
+        run: clang++ --version || true
 
       - name: Add intel repo to apt
         run: |
