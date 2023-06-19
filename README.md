@@ -21,7 +21,7 @@ More complex builds:
 
 Equally complex builds:
 
- * Use GCC (instead of Intel) compiler: [gha_gcc_cpp17](https://github.com/richelbilderbeek/gha_gcc_cpp17
+ * Use GCC (instead of Intel) compiler: [gha_gcc_cpp17](https://github.com/richelbilderbeek/gha_gcc_cpp17)
 
 Less complex builds:
 
