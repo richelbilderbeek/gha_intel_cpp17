@@ -27,8 +27,8 @@ jobs:
       - name: Remove clang
         run: sudo apt-get remove clang
 
-      - name: clang++ must be removed. It is :-)
-        run: clang++ --version || true
+      - name: clang must be removed. It is :-)
+        run: clang --version || true
 
       - name: Add intel repo to apt
         run: |
