@@ -17,7 +17,7 @@ The goal of this project is to have a clean GitHub Actions build, with specs:
 
 More complex builds:
 
- * Use the Boost libraries: [gha_intel_boost](https://github.com/richelbilderbeek/gha_intel_boost)
+ * Use the Boost libraries: [gha_intel_boost](https://github.com/richelbilderbeek/gha_intel_cpp17_boost)
  * Build with `CMake`: [gha_cmake_intel_cpp17](https://github.com/richelbilderbeek/gha_cmake_intel_cpp17)
 
 Equally complex builds:
