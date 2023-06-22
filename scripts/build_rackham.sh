@@ -29,6 +29,10 @@ fi
 
 date
 
+# 'intel-oneapi' is a complex module:
+# after loading it, one adds modules from it, 
+# e.g. loading the compiler with: 'module load intel-oneapi compiler'
+# Use 'll /sw/comp/intel/oneapi/modulefiles' to see those secondary modules.
 
 module load gcc/13.1.0 intel-oneapi compiler
 icpx main.cpp --verbose -o gha_intel_cpp17
